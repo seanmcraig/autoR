@@ -31,3 +31,15 @@ Option #1: Use the built-in plotter.
 autopredictmod(model=mod,data=mtcars,want="disp", out="plot")
 ```
 ![plot output](/autopredictmod-plot.png "'plot' output")
+
+Option #2: Get a data frame and build the plot yourself, such as with `ggplot()`
+```
+library(ggplot2)
+ap <- autopredictmod(model=mod,data=mtcars,want="disp", out="preds")
+ggplot(data=ap, aes(x=x,y=fit)) + 
+    geom_line() +
+    geom_ribbon(aes(ymin=lb,ymax=ub,fill=I("gray")),alpha=.5) +
+    labs(x="disp",y="predicted values")
+```
+
+![preds output using ggplot](/autopredictmod-ggplot.png "'preds' output using ggplot")
