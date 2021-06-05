@@ -30,4 +30,4 @@ Option #1: Use the built-in plotter.
 ```
 autopredictmod(model=mod,data=mtcars,want="disp", out="plot")
 ```
-![plot output](/examples/autopredictmod-plot.png "'plot' output")
+![plot output](/autopredictmod-plot.png "'plot' output")
